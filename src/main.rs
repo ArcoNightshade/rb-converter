@@ -1,4 +1,4 @@
-use std::io;
+use prompted::input;
 
 fn main() {
     println!("Welcome to the magical Height-to-Redbull converter!");
@@ -8,12 +8,10 @@ fn main() {
 
     println!("Please input your height in centimeters:");
 
-    let mut user_height_input = String::new();
-    io::stdin()
-        .read_line(&mut user_height_input)
-        .expect("Failed to read line");
+    let mut _user_height_input = String::new();
+    let _user_height_input = input!("Height in cm: ");
 
-    let _height_in_cm: i32 = user_height_input
+    let _height_in_cm: i32 = _user_height_input
         .trim()
         .parse()
         .expect("Please type a number!");
